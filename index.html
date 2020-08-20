@@ -10,8 +10,8 @@
         <header>
                 <nav>
                     Style:
-                    <a href="javascript:s1.disabled=false; s2.disabled=true;">One</a>
-                    <a href="javascript:s2.disabled=false; s1.disabled=true;">Two</a>
+                    <a id="activate1" href="#">One</a>
+                    <a id="activate2" href="#">Two</a>
                 </nav>
                 <h1>Rossum's Universal Restaurant</h1>
         </header>
@@ -105,5 +105,28 @@
             </address>
         </footer>
     </div>
+    <script>
+            function changeToOne() {
+                const s1 = document.getElementById('s1');
+                const s2 = document.getElementById('s2');
+
+                s2.disabled = true;
+                s1.disabled = false; 
+            }
+
+            function changeToTwo() {
+                const s1 = document.getElementById('s1');
+                const s2 = document.getElementById('s2');
+
+                s1.disabled = true;
+                s2.disabled = false;
+            }
+
+            const activate1 = document.getElementById('activate1');
+            const activate2 = document.getElementById('activate2');
+
+            activate1.addEventListener('click', changeToOne);
+            activate2.addEventListener('click', changeToTwo);
+    </script>
 </body>
 </html>
